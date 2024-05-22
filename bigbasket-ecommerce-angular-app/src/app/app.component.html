@@ -1,30 +1,137 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="javascript:void(0)">Logo</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light nav-yellow  border-bottom border-top p-0">
+    <div class="container">
+      <a class="navbar-brand fs-4 fw-bold "><i class="fa fa-cart-shopping fs-4" style="color: #f54242;"></i><span
+          class="textBlur">bigBasket</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <!--Toggle  -->
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="mynavbar">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/products">Products</a>
+      <!-- Nav Items -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0  text-center ">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-semibold text-uppercase me-1" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
+              <li class="position-relative">
+                <a class="dropdown-item hand" >
+                 categoryname
+                </a>
+                <!-- Nested dropdown for subcategories -->
+                <ul class="dropdown-menu sub-menu">
+                  <li
+>
+                    <a class="dropdown-item hand" routerLinkActive="router-link-active">CATEGORYNAME</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle redHover fw-semibold text-uppercase text-black me-1" id="navbarDropdown"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              pages
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item">About Us</a></li>
+              <li><a class="dropdown-item">Contact Us</a></li>
+              <li><a class="dropdown-item">Terms and Conditions</a></li>
+            </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/category">Category</a>
+            <a class="nav-link fw-semibold text-uppercase text-black me-1 hand">Contact us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">Link</a>
+            <a class="nav-link"><i class="fa-solid fa-magnifying-glass fs-5" style="color: #0c0d0d;"></i></a>
+          </li>
+          <!-- cart -->
+                 <!-- cart -->
+                 <ng-container>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown3" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <i class="fa fa-cart-shopping fs-5 me-1" style="color: #202122;"></i>
+                      <!-- <span class="position-absolute translate-middle badge rounded-pill bg-danger"
+                        *ngIf="cartList.length !== 0">
+                        {{cartList.length}}
+                      </span> -->
+                    </a>
+                    <ng-container>
+                      <ul class="dropdown-menu menuOnLeft rounded-0 mt-2" aria-labelledby="navbarDropdown3">
+                        <li class="p-2">
+                          <div>
+                            <div class="row">
+                              <div class="col-md-4">
+                                <!-- <img class="cartImg" [src]="cart.productImageUrl" alt="..."> -->
+                              </div>
+                              <div class="col-md-6">
+                                <div>
+                                  <a class="text-decoration-none text-black fw-semibold">
+                                    <!-- <p class="m-0 p-0">{{cart.productShortName}}</p> -->
+                                  </a>
+                                  <!-- <p>{{cart.quantity}} <i class="fa-solid fa-xmark" style="color: #0d0d0d;"></i> -->
+                                    <!-- cart.productPric</p> -->
+                                </div>
+                              </div>
+                              <div class="col-md-2">
+                                <button class="btn closeBtn float-end" style="height: auto;" ><i
+                                    class="fa fa-xmark"></i></button>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="p-2">
+                          <div class=" w-100 ">
+                            <div class="d-flex justify-content-between">
+                              <h6>SubTotal :</h6>
+                              <h6>cureenvy totl</h6>
+                            </div>
+                            <div class="d-flex justify-content-evenly mt-2">
+                              <button class="btn btn-dark rounded-0 px-3"> View Cart</button>
+                              <a routerLink="/checkout" routerLinkActive="router-link-active"> <button
+                                  class="btn btn-danger rounded-0 px-3">Checkout</button></a>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </ng-container>
+                    <ng-container >
+                      <ul class="dropdown-menu menuOnLeft rounded-0 mt-2" aria-labelledby="navbarDropdown">
+                        <li>
+                          <p class="text-center mb-0">No Product Added to Cart</p>
+                        </li>
+                      </ul>
+                    </ng-container>
+                  </li>
+                  <span class="d-flex">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle fw-semibold text-uppercase me-1" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="text-dark fw-bold"><i class="fa fa-user ms-3 me-1"></i>name</span>
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li> <a class="dropdown-item hand" > Profile </a></li>
+                        <li> <a class="dropdown-item hand" routerLink="" routerLinkActive="router-link-active">
+                            Orders</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item ms-4">
+                      <button class="btn btn-sm btn-danger logOutBtn"> <i
+                          class="fa fa-sign-out" aria-hidden="true"></i></button>
+                    </li>
+                  </span>
+                </ng-container>
+
+  
+          <li class="nav-item">
+            <a class="nav-link"> </a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" name="search"
-            placeholder="Search">
-          <button class="btn btn-primary" type="button">Search</button>
-        </form>
       </div>
     </div>
   </nav>
-  <div class="container-fluid">
-    <router-outlet></router-outlet>
-  </div>
-  
+</header>
